@@ -37,14 +37,14 @@ namespace HeapPriorityQueue
 
         public T Peek()
         {
-            if (Count() <= 0)
+            if (Count() > 0)
             {
-                throw new InvalidOperationException();
+                return heapStoringList[0];
             }
 
             else
             {
-                return heapStoringList[0];
+                throw new InvalidOperationException();
             }
         }
 
@@ -85,10 +85,7 @@ namespace HeapPriorityQueue
                 }
                 return returnValue;
             }
-            else
-            {
-                throw new InvalidOperationException();
-            }
+            throw new InvalidOperationException();
         }
     }
 }

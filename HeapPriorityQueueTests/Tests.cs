@@ -16,7 +16,7 @@ namespace HeapPriorityQueueTests
 
 
         [Test]
-        public void CheckIfAddingMultipleIntegerReturnsCorrectValue()
+        public void CheckIfAddingMultipleIntegersReturnsCorrectValue()
         {
             HeapPriorityQueueHandler<int> priorityQueueToTest = new HeapPriorityQueueHandler<int>();
             priorityQueueToTest.Add(5);
@@ -53,7 +53,7 @@ namespace HeapPriorityQueueTests
         }
 
         [Test]
-        public void CheckIfPopWorks()
+        public void CheckIfPopReturnsCorrectValue()
         {
             HeapPriorityQueueHandler<int> priorityQueueToTest = new HeapPriorityQueueHandler<int>();
             priorityQueueToTest.Add(5);
@@ -77,7 +77,7 @@ namespace HeapPriorityQueueTests
         }
 
         [Test]
-        public void CheckIfPeekWorks()
+        public void CheckIfPeekReturnsCorrectValue()
         {
             HeapPriorityQueueHandler<int> priorityQueueToTest = new HeapPriorityQueueHandler<int>();
             priorityQueueToTest.Add(5);
@@ -103,6 +103,13 @@ namespace HeapPriorityQueueTests
         {
             HeapPriorityQueueHandler<int> priorityQueueToTest = new HeapPriorityQueueHandler<int>();
             Assert.That(() => priorityQueueToTest.Pop(), Throws.InvalidOperationException);
+        }
+
+        [Test]
+        public void CheckIfCountWorksIfQueueIsEmpty()
+        {
+            HeapPriorityQueueHandler<int> priorityQueueToTest = new HeapPriorityQueueHandler<int>();
+            Assert.AreEqual(0,priorityQueueToTest.Count());
         }
 
         [Test]
